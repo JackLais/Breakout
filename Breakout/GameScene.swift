@@ -10,11 +10,16 @@ import GameplayKit
 
 class GameScene: SKScene {
     var ball = SKShapeNode()
+    var paddle = SKSpriteNode()
     override func didMove(to view: SKView) {
         createBackground()
         resetGame()
         
     }
+    func resetGame() {
+            // this stuff happens before each game starts
+            makeBall()
+        }
     func createBackground() {
         let stars = SKTexture(imageNamed: "Stars")
         for i in 0...1 {
@@ -55,8 +60,4 @@ class GameScene: SKScene {
            
            addChild(ball)  // add ball object to the view
        }
-    func resetGame() {
-            // this stuff happens before each game starts
-            makeBall()
-        }
 }
